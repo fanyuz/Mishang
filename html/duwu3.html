@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<!--Public style sheet-->
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<!--style file-->
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/new_dw.css"/>
+		<!--Plug-in library-->
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<!--Rem Unit processing-->
+		<script type="text/javascript" src="../js/Rem.js"></script>
+		<!--script file-->
+		<script type="text/javascript" src="../js/public.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="main">
+
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				var uid = 123;
+				$.ajax({
+					type: "get",
+					url: "https://api.duwu.mobi/duwu/vp/topicInfo.json?u=" + uid + "&tid=" + 1467268417625 + "&test=1",
+					async: true,
+					success: function(data) {
+						//						debugger ;
+						console.log(data)
+						$('.main').append('<div class="content"></div>');
+
+						try {
+							if(data.attachment.firstpic) {
+								$('.content').append(
+									'<div style="height:0px;"></div><img src="' + data.attachment.firstpic.img + '" alt=""><h4>' + data.attachment.topic.title + '</h4>'
+								);
+
+							} else {
+								$('.content').append(
+									'<h4>' + data.attachment.topic.title + '</h4>'
+								)
+
+							}
+							//添加原创
+							//文字和图片返回值判断添加
+							for(var i = 0; i < data.attachment.topic.imageText.length; i++) {
+								var dataTopic = data.attachment.topic.imageText[i];
+								var t = dataTopic.t;
+								//t为1添加文字信息
+								if(t == 1) {
+									$('.content').append(
+										'<div class="duwu_h3 word_wrap"><p>' + dataTopic.c + '</p> </div>'
+									)
+								} else if(t == 2) { //t为2添加图片
+									$('.content').append(
+										'<div class="img"><a href="javascript:;"><img src="' + dataTopic.pic.img + '" alt=""></a></div>'
+									)
+								} else if(t == 3) { //t为3添加视频
+									$('.content').append(
+										'<video poster="' + dataTopic.video.pic.img + '"style="width:100%" autoplay="false"><source src="' + dataTopic.video.url + '" type="video/mp4"></video>'
+									)
+								} else if(t == 4) { //t为4添加购买推荐
+									if(dataTopic.product.type == 3) {
+										$('.content').append(
+											'<div class="buy"><a href="javascript:;"style="display: block;overflow: hidden"><div class="buy_left"><a href="javascript:;"  onclick="goProduct(' + dataTopic.product.id + ')"><img src="' + dataTopic.product.pic.img + '" alt=""></a></div> <div class="buy_right"><p>' + dataTopic.product.title + '</p><div class="go_buy"><span>' + dataTopic.product.price + '<font style="font-size:.26rem;"></font></span><span><a href="javascript:;" onclick="goProduct(' + dataTopic.product.id + ')">去购买</a></span></div></div></a></div>'
+										)
+									} else {
+										$('.content').append(
+											'<div class="buy"><a href="javascript:;"style="display: block;overflow: hidden"><div class="buy_left"><a href="javascript:;"  class="targettopic"><img src="' + dataTopic.product.pic.img + '" alt=""></a></div> <div class="buy_right"><p>' + dataTopic.product.title + '</p><div class="go_buy"><span>' + dataTopic.product.price + '<font style="font-size:.26rem;"></font></span><span><a href="javascript:;" class="targettopic">去购买</a></span></div></div></a></div>'
+										)
+									}
+								} else if(t == 5) { //插入的帖子
+									$('.content').append(
+										'<div class="viewposts" onclick="goTopic(' + dataTopic.topic.id + ',' + dataTopic.topic.type + ')"> <div class="viewposts_l"><img src="' + dataTopic.topic.pic.img + '" alt=""></div> <div class="viewposts_r"> <h2>' + dataTopic.topic.title + '</h2> <p>' + dataTopic.topic.c + '</p> <div class="viewmore"> <img src="' + dataTopic.topic.user.head + '" alt=""> <span>' + dataTopic.topic.user.nick + '</span> <a href=""onclick="goArticle(id)">查看帖子>></a> </div> </div> </div>'
+									)
+								}
+							}
+
+						} catch(err) {
+							//在此处理错误
+						}
+
+					}
+
+				})
+			})
+		</script>
+	</body>
+
+</html>

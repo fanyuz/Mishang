@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>圈子</title>
+		<!--Public style sheet-->
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-4.1.0.min.css"/>
+		<!--style file-->
+		<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+		<!--Plug-in library-->
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/swiper-4.1.0.min.js"></script>
+		<!--Rem Unit processing-->
+		<script type="text/javascript" src="../../js/Rem.js"></script>
+		<!--script file-->
+		<script type="text/javascript" src="../../js/public.js"></script>
+	</head>
+	<body>
+		<div class="det_main">
+			<img src="../../img/img4/1.png" alt="" />
+			<p class="p_weight">ROMAN HOLIDAY RING</p>
+			<h5 class="p_weight">罗马假日戒指</h5>
+			<h4><i>￥</i>3,700.00</h4>
+			<img src="../../img/img4/2.png" alt="" />
+			<img src="../../img/img4/3.png" alt="" />
+			<img src="../../img/img4/4.png" alt="" />
+			<img src="../../img/img4/5.png" alt="" />
+			<img src="../../img/img4/6.png" alt="" />
+			
+		</div>
+		<div class="det_cm">
+			<img src="../../img/img9281764758.png"/>
+		</div>
+		<div class="related">
+			<h3>相关推荐</h3>
+			<div class="swiper-container5">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide"><img src="../../img/footer_img/1.png"/></div>
+			        <div class="swiper-slide"><img src="../../img/footer_img/2.png"/></div>
+			        <div class="swiper-slide"><img src="../../img/footer_img/3.png"/></div>
+			        <div class="swiper-slide"><img src="../../img/footer_img/4.png"/></div>
+			        <div class="swiper-slide"><img src="../../img/footer_img/5.png"/></div>
+			        <div class="swiper-slide"><img src="../../img/footer_img/6.png"/></div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			    
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".return").click(function(){
+			window.history.back()
+		})
+		
+		var mySwiper = new Swiper ('.swiper-container5', {
+		    direction: 'horizontal',
+		    slidesPerView : 3,
+  			slidesPerGroup : 3,
+  			spaceBetween: 12,
+  			loop: true,
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		})        
+	</script>
+</html>

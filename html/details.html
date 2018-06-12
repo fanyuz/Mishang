@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<!--Public style sheet-->
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<!--style file-->
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<!--Plug-in library-->
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<!--Rem Unit processing-->
+		<script type="text/javascript" src="../js/Rem.js"></script>
+		<!--script file-->
+		<script type="text/javascript" src="../js/public.js"></script>
+	</head>
+	<body style="background: #F4F4F4;">
+		<div class="details_header">
+			<p class="active">图文详情</p>
+			<p>温馨提示</p>
+		</div>
+		<div class="details_box">
+			<div class="details_main det_show">
+				<h3 class="h3_title">商品描述</h3>
+				<div class="commodity_details">
+					<img src="../img/comm_deyails@2x.png"/>
+				</div>
+				<h3 class="h3_title">商品图片</h3>
+				<div class="commodity_img">
+					<img src="../img/14076559020828733.jpg"/>
+					<img src="../img/184647200736136888.jpg"/>
+					<img src="../img/44679172159863191.jpg"/>
+					<img src="../img/872741869783129475.jpg"/>
+				</div>
+				<div class="details_baseline">
+					<i></i>
+					<p>我是有底线的</p>
+				</div>
+			</div>
+			<div class="details_main">
+				<h3 class="h3_title">商品描述</h3>
+				<div class="commodity_details">
+					<img src="../img/comm_deyails@2x.png"/>
+				</div>
+			</div>
+		</div>
+			
+	</body>
+	<script type="text/javascript">
+		$(".details_header p").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+			$(".details_box > div").eq($(this).index()).addClass("det_show").siblings().removeClass("det_show")
+		})
+	</script>
+</html>
