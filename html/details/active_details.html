@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>活动详情</title>
+		<!--Public style sheet-->
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-4.1.0.min.css"/>
+		<!--style file-->
+		<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+		<!--Plug-in library-->
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/swiper-4.1.0.min.js"></script>
+		<!--Rem Unit processing-->
+		<script type="text/javascript" src="../../js/Rem.js"></script>
+		<!--script file-->
+		<script type="text/javascript" src="../../js/public.js"></script>
+	</head>
+	<body>
+		<div class="active_details">
+			<img src="../../img/details/0651129add49ab0fc7c6a341fc60fe40b3f4f3@2x.png"/>
+			<p class="shop_name">LILIFAN莉莉梵 施华洛世奇月色耳坠</p>
+			<p class="shop_price">￥20</p>
+			<h4 id="my_number">我的号码<img src="../../img/details/my_number@2x.png" alt="" /></h4>
+			<ul class="number_list">
+				<li>N115</li>
+				<li>N789</li>
+				<!--<li>N430</li>
+				<li>N173</li>
+				<li>N198</li>
+				<li>N039</li>
+				<li>N105</li>
+				<li>N377</li>-->
+			</ul>
+			<img src="../../img/details/0651005667fec4fff3f8253cc2c411c8656ece@2x.png"/>
+			<img src="../../img/details/065100bb53da127a80065a57b18e967102359b@2x.png"/>
+			<img src="../../img/details/0651125c3138d7880332c8df6d35b39e3de437@2x.png"/>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		$(window).ready(function(){
+			var nub_list = $(".number_list li").length;
+			if (nub_list == 0) {
+				$(".number_list").css("display","none");
+				$("#my_number").css("display","none");
+			} else if (nub_list == 1) {
+				$(".number_list li").css({"width":"100%","text-align":"center"})
+			} else if(nub_list == 2){
+				$(".number_list li").css({"width":"50%","text-align":"center"})
+			}else{
+				$(".number_list li").css("width","33%")
+			}
+			$("#my_number").click(function(){
+				$(".number_list").slideToggle();
+			})
+		})
+	</script>
+</html>

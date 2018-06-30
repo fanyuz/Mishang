@@ -669,7 +669,8 @@
 }
 .cdetai_top .big_img {
   width: 15rem;
-  height: 15rem;
+  height: auto;
+  overflow: hidden;
   background: #000000;
   margin-bottom: 1.4rem;
 }
@@ -710,6 +711,7 @@
   position: relative;
 }
 .cdetai_top h4 p {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -922,6 +924,7 @@
 .det_main p {
   font-size: 0.52rem;
   line-height: 0.96rem;
+  color: #161516;
 }
 .det_main .p_weight {
   font-weight: 600;
@@ -931,11 +934,37 @@
   line-height: 1.12rem;
 }
 .det_main h4 {
-  font-size: 0.84rem;
+  font-size: 0.68rem;
   line-height: 0.96rem;
   padding: 0.2rem 0;
-  color: #E80000;
-  margin: 0.2rem 0 0.6rem;
+  color: #161516;
+  margin-top: 0.2rem;
+}
+.det_main h4 s {
+  font-size: 0.48rem;
+  color: #757575;
+  line-height: 0.96rem;
+  margin-left: 0.4rem;
+}
+.det_main .inte_icon {
+  width: 2.28rem;
+  height: 0.76rem;
+  margin: 0.4rem auto 0.8rem;
+  position: relative;
+}
+.det_main .inte_icon img {
+  display: block;
+  width: 100% !important;
+}
+.det_main .inte_icon span {
+  width: 1.88rem;
+  height: 0.6rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.08rem;
+  line-height: 0.6rem;
+  font-size: 0.36rem;
+  color: #fff;
 }
 .det_cm {
   width: 100%;
@@ -1233,7 +1262,7 @@
 .change_main > div span {
   float: left;
   margin-right: 0.4rem;
-  font-size: 4.8rem;
+  font-size: 0.48rem;
 }
 .change_main > div input {
   width: 6rem;
@@ -1368,6 +1397,149 @@
   line-height: 0.8rem;
   font-size: 0.36rem;
   margin-top: 1.2rem;
+}
+/************活动详情***********/
+.active_details {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 0.48rem;
+}
+.active_details img {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.active_details .shop_name {
+  font-size: 0.52rem;
+  color: #161516;
+  text-align: center;
+  margin-top: 1.2rem;
+  height: 0.52rem;
+}
+.active_details .shop_price {
+  font-size: 0.68rem;
+  color: #E94040;
+  text-align: center;
+  height: 0.68rem;
+  margin: 0.6rem 0;
+}
+.active_details h4 {
+  font-size: 0.4rem;
+  color: #757575;
+  margin: 0.6rem auto;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  width: 2.4rem;
+}
+.active_details h4 img {
+  display: block;
+  width: 0.4rem;
+  height: 0.2rem;
+  vertical-align: middle;
+  float: right;
+  margin-top: 0.24rem;
+}
+.active_details .number_list {
+  width: 6.8rem;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: none;
+}
+.active_details .number_list li {
+  font-size: 0.48rem;
+  width: 33%;
+  float: left;
+  text-align: left;
+  line-height: 1rem;
+  color: #757575;
+}
+.active_details .number_list li:nth-child(3n-1) {
+  text-align: center;
+}
+.active_details .number_list li:nth-child(3n) {
+  text-align: right;
+}
+.choujiang {
+  width: 9.6rem;
+  height: 12rem;
+  margin: 6rem auto 0;
+  position: relative;
+}
+.choujiang .kacao {
+  width: 9.6rem;
+  height: 0.48rem;
+}
+.choujiang .kacao img {
+  width: 100%;
+  display: block;
+}
+.choujiang .top_zhe {
+  width: 6.4rem;
+  height: 5.28rem;
+  background: #fff;
+  border-bottom: 0.2rem solid #161516;
+  position: absolute;
+  left: 50%;
+  top: -5.08rem;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.choujiang .act_number {
+  width: 6.4rem;
+  height: 5.28rem;
+  background: #f9f9f9;
+  position: absolute;
+  left: 50%;
+  top: -5.08rem;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: all 1s;
+  text-align: center;
+  line-height: 1.76rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.choujiang .act_number2 {
+  width: 6.4rem;
+  height: 1.76rem;
+  background: #f9f9f9;
+  position: absolute;
+  left: 50%;
+  top: -1.56rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  line-height: 1.76rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.choujiang .animate {
+  animation: act 0.5s linear 1s forwards;
+}
+@keyframes act {
+  0% {
+    top: -1.56rem;
+  }
+  100% {
+    top: 0.28rem;
+  }
+}
+.act_btn555 {
+  width: 14.04rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.56rem;
+  color: #FFFFFF;
+  background: #161516;
+  text-align: center;
+  position: fixed;
+  bottom: 0.2rem;
+  left: 0.48rem;
 }
 /******文字超出隐藏********/
 .text-overflow {

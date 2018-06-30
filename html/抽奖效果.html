@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<!--Public style sheet-->
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<!--style file-->
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<!--Plug-in library-->
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<!--Rem Unit processing-->
+		<script type="text/javascript" src="../js/Rem.js"></script>
+		<!--script file-->
+		<script type="text/javascript" src="../js/public.js"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div class="choujiang">
+			<div class="kacao">
+				<img src="../img/jiangcao@2x.png"/>
+			</div>
+			<div class="top_zhe">
+				
+			</div>
+			<div class="act_number">
+				<p>N148</p>
+				<p>N148</p>
+				<p>N148</p>
+			</div>
+			<div class="act_number2">
+				<p>N148</p>
+			</div>
+		</div>
+		<div class="act_btn555">
+			立即参与
+		</div>
+	</body>
+	<script type="text/javascript">
+		var a = false;
+		$(".act_btn555").click(function(){
+			if (!a) {
+				$(".act_number").css("top","0.28rem")
+			} else{
+				$(".act_number").css("top","-5.08rem")
+			}
+			a =! a;
+		})
+		$(".act_number").click(function(){
+			$(".act_number").css("top","-5.08rem");
+			$(".act_number2").addClass("animate");
+		})
+	</script>
+</html>
